@@ -1,0 +1,28 @@
+#### GIT RESET ###
+
+[commit-A]--[commit-B]--[commit-C]--[commit-D]--[commit-E]--[commit-F]--[commit-G]
+
+$ git reset HEAD~4
+There are three options for get reset, "--soft", "--mixed", and "--hard"
+
+**By default it is "--mixed"
+
+$ git reset HEAD~4 --mixed # It will bring to last "commit-C", provided that it will keeps all the changes made (D,E,F,G) as "Unstaged".
+
+$ git reset HEAD~4 --soft # It will bring to last "commit-C", provided that it will keeps all the changes made (D,E,F,G) as "Staged".
+
+$ git reset HEAD~4 --hard # It will bring to last "commit-C", provided that it will not keep any changes that were made (D,E,F,G). 
+                          # Even it will delete the file if any made in these any commit(D,E,F,G).
+
+
+##### GIT REVERT ####
+
+[commit-A]--[commit-B]--[commit-C]--[commit-D]--[commit-E]--[commit-F]--[commit-G]
+
+*** $ git reset command can't undo a specific commit, where git revert can.
+** git reset command can moves back to previous number of 1,2,3,4 commit but it can't go back to specific commit that made at exa, [commit-D]
+** git revert command can moves back to a particular commit like [commit-D], while doing so, it actually adding a new commit for that revert.
+** Also note that if there was any changes made in [commit-E] and that continues till [commit-G], then if we want to revert [commit-D], it
+        will show conflict, which needs to fix manually.
+
+$ git log --oneline ## will show all the commits made along the way
