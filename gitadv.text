@@ -25,4 +25,44 @@ $ git reset HEAD~4 --hard # It will bring to last "commit-C", provided that it w
 ** Also note that if there was any changes made in [commit-E] and that continues till [commit-G], then if we want to revert [commit-D], it
         will show conflict, which needs to fix manually.
 
-$ git log --oneline ## will show all the commits made along the way
+$ git log --oneline ## will show all the commits made along the way.
+
+
+####### detached head by "$ git checkout f4e1091"
+
+sushil@sushil:~/GitAdv$ git log --oneline
+c39a716 (HEAD -> main) resolving after manual intervention for git revert 6ca1319
+97e0e96 resolving git revert 6ca1319 by git revert --continue
+7ce6a95 commit-G
+6ba2496 commit-F
+5f149d8 commit-E
+6ca1319 commit-D
+f4e109a commit-C
+04bd4ef commit-B
+6ae5f32 commit-A
+sushil@sushil:~/GitAdv$ git checkout f4e109a
+Note: switching to 'f4e109a'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f4e109a commit-C
+sushil@sushil:~/GitAdv$ cat gitadvtesting.yml 
+---
+This first line is a comment for commit-A
+This is the second line for commit-B
+This is the third line for commit-Csushil@sushil:~/GitAdv$ 
+
+#######################################
