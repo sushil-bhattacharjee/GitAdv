@@ -66,8 +66,6 @@ This is the second line for commit-B
 This is the third line for commit-Csushil@sushil:~/GitAdv$ 
 
 #######################################
-<<<<<<< HEAD
-=======
 # Question: A developer has issued the git add file1 file2 test.py command to add three files for the next commit 
 # but then decides to exclude test.py from this commit. Which command needs to be used to exclude test.py from this 
 # commit but keep the
@@ -120,4 +118,3 @@ Changes to be committed:
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
         test.py
->>>>>>> parent of 1662c6a (Revert "Adding all the files")
