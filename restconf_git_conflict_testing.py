@@ -9,7 +9,7 @@ def get_restconf_data(url, headers):
         return None
 
 def main():
-    url = "https://api.example.com/restconf/data" #revised the url BRANCH
-    headers = {"Content-Type": "application/json", "Authorization": "Bearer token"} # Added authorization header BRANCH
+    url = "https://api.example.com/restconf/data/Cisco-IOS-XE-native:native/interface/Loopback/0" #revised the url BRANCH
+    headers = {"Content-Type": "application/yang-data+json", "Authorization": "Basic token"} # Added authorization header BRANCH
     data = get_restconf_data(url, headers)
     print(f"RESTCONF Data: {data}") # Added formatted print main
