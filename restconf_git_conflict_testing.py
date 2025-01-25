@@ -12,4 +12,10 @@ def main():
     url = "https://api.example.com/restconf/data/Cisco-IOS-XE-native:native/interface/Loopback/0" #revised the url BRANCH
     headers = {"Content-Type": "application/yang-data+json", "Authorization": "Basic token"} # Added authorization header BRANCH
     data = get_restconf_data(url, headers)
-    print(f"RESTCONF Data: {data}") # Added formatted print main
+    if data:
+        print(f"RESTCONF Data: {data}") # Added formatted print main
+    else:
+        print("Failed to fetch RESTCONF data.")
+
+if __name__ == "__main__":
+    main()
