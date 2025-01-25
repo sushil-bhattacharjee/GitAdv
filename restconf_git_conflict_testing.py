@@ -15,9 +15,9 @@ def get_restconf_data(url, headers):
 
 def main():
     base_url = "https://api.example.com/restconf/data"
-    endpoint = "/Cisco-IOS-XE-native:native/interface/Loopback/0"
+    endpoint = "/Cisco-IOS-XE-native:native/interface/GigabitEthernet=1"
     headers = {"Content-Type": "application/yang-data+json", "Authorization": "Basic token"} # Added authorization header BRANCH
-    if data := get_restconf_data(f"{base_url}{endpoint}", headers):
+    if data := get_restconf_data(base_url + endpoint, headers):
         print(f"RESTCONF Data: {data}") # Added formatted print main
     else:
         print("Failed to fetch RESTCONF data.")
