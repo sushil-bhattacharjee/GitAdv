@@ -1,4 +1,9 @@
 import requests
+import json
+import urllib3
+
+#Disable SSL warnings
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def get_restconf_data(url, headers):
     try:                                                         # Added error handling BRANCH
@@ -9,7 +14,7 @@ def get_restconf_data(url, headers):
         return None
 
 def main():
-    url = "https://api.example.com/restconf/data/Cisco-IOS-XE-native:native/interface/GigabitEthernet=1" #revised the url BRANCH
+    url = "https://api.example.com/restconf/data/Cisco-IOS-XE-native:native/interface/Loopback/0" #revised the url BRANCH
     headers = {"Content-Type": "application/yang-data+json", "Authorization": "Basic token"} # Added authorization header BRANCH
     data = get_restconf_data(url, headers)
     if data:
